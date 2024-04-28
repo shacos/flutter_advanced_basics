@@ -1,45 +1,37 @@
 import 'package:flutter/material.dart';
 
-import 'package:advanced_basics/styled_text.dart';
+import 'package:advanced_basics/start_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
 
   @override
-  State<StatefulWidget> createState() {
+  State<Quiz> createState() {
     return _QuizState();
   }
 }
 
-class _QuizState extends State {
-  void runQuiz() {}
-
+class _QuizState extends State<Quiz> {
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Image.asset(
-          "assets/images/quiz-logo.png",
-          width: 300,
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        const StyledText("Learn Flutter the fun way!"),
-        const SizedBox(
-          height: 20,
-        ),
-        OutlinedButton(
-          style: OutlinedButton.styleFrom(
-            foregroundColor: Colors.white,
+  Widget build(context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 104, 8, 99),
+                Color.fromARGB(255, 189, 43, 194),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
           ),
-          onPressed: runQuiz,
-          child: const Text(
-            "Start Quiz",
+          child: const Center(
+            child: StartScreen(),
           ),
         ),
-      ],
+      ),
     );
   }
 }
