@@ -2,19 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StyledText extends StatelessWidget {
-  final String textContent;
+  const StyledText(this.textContent, this.fontSize, this.textAlignment,
+      {super.key, this.color = Colors.white});
 
-  const StyledText(this.textContent, {super.key});
+  final String textContent;
+  final double fontSize;
+  final TextAlign textAlignment;
+  final Color color;
 
   @override
   Widget build(context) {
     return Text(
       textContent,
-      textAlign: TextAlign.center,
+      textAlign: textAlignment,
       style: GoogleFonts.lato(
-        color: Colors.white,
+        color: color,
         fontWeight: FontWeight.bold,
-        fontSize: 24,
+        fontSize: fontSize,
       ),
     );
   }

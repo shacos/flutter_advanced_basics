@@ -37,7 +37,11 @@ class _QuestionScreenState extends State<QuestionScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            StyledText(currentQuestion.question),
+            StyledText(
+              currentQuestion.question,
+              24,
+              TextAlign.center,
+            ),
             const SizedBox(
               height: 30,
             ),
